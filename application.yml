@@ -2,7 +2,9 @@ drools:
   orderRules: >
     import com.olx.model.OrderRequest;
     import com.olx.model.CustomerType;
-    global com.olx.model.OrderDiscount orderDiscount;
+    import com.olx.model.OrderDiscount;
+    
+    global OrderDiscount orderDiscount;
 
     dialect  "mvel"
 
