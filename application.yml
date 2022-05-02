@@ -1,7 +1,5 @@
 drools:
   orderRules: >
-    package com.baeldung.drools.rules;
-
     import com.olx.model.OrderRequest;
     import com.olx.model.CustomerType;
     global com.olx.model.OrderDiscount orderDiscount;
