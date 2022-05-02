@@ -3,9 +3,7 @@ drools:
     import com.olx.model.OrderRequest;
     import com.olx.model.CustomerType;
     import com.olx.model.OrderDiscount;
-    
     global OrderDiscount orderDiscount;
-
     dialect  "mvel"
     rule "Age based discount"
         when
