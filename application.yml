@@ -7,5 +7,5 @@ drools:
         when 
             p: OrderRequest(age >= 5)
         then
-            System.out.println(p.getName() + "is 5 or over.");
+            System.out.println(p.getCustomerType() + "is 5 or over.");
     end
