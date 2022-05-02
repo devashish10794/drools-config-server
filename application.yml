@@ -3,9 +3,9 @@ drools:
     
     import com.olx.model.OrderRequest;
     
-    rule isAgeGeaterThan18
+    rule isAgeGeaterThan20
         when 
-            p: OrderRequest(age >= 18)
+            p: OrderRequest(age >= 20)
         then
-            System.out.println(p.getCustomerType() + "is 18 or over.");
+            System.out.println(p.getCustomerType() + " is 20 or over.");
     end
