@@ -1,6 +1,7 @@
 drools:
   orderRules: >
     
+    package com.olx.model
     import com.olx.model.OrderRequest;
     
     rule 'isAgeGeaterThan5'
