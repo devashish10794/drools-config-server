@@ -3,7 +3,7 @@ drools:
     
     import com.olx.model.OrderRequest;
     
-    rule 'isAgeGeaterThan5'
+    rule isAgeGeaterThan5
         when 
             p: OrderRequest(age >= 5)
         then
