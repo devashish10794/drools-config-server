@@ -7,7 +7,7 @@ drools:
     
     global com.olx.model.OrderDiscount orderDiscount;
     
-    rule Age based discount
+    rule AgeBasedDiscount
         when
             OrderRequest(age < 20 || age > 50)
         then
@@ -15,7 +15,7 @@ drools:
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 10);  
     end
     
-    rule Customer type based discount - Loyal customer
+    rule CustomerTypeBasedDiscountLoyalCustomer
         when
             OrderRequest(customerType.getValue == "LOYAL")
         then
@@ -23,7 +23,7 @@ drools:
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 5);
     end
     
-    rule Customer type based discount - others
+    rule CustomerTypeBasedDiscountOthers
         when
             OrderRequest(customerType.getValue != "LOYAL")
         then
@@ -31,7 +31,7 @@ drools:
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 3);
     end
     
-    rule Amount based discount
+    rule AmountBasedDiscount
         when
             OrderRequest(amount > 1000L)
         then
