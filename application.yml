@@ -2,11 +2,10 @@ drools:
   orderRules: >
     
     import com.olx.model.OrderRequest;
+    
     import com.olx.model.CustomerType;
     
     global com.olx.model.OrderDiscount orderDiscount;
-    
-    dialect mvel
     
     rule Age based discount
         when
@@ -15,6 +14,7 @@ drools:
             System.out.println("==========Adding 10% discount for Kids/ senior customer=============");
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 10);  
     end
+    
     rule Customer type based discount - Loyal customer
         when
             OrderRequest(customerType.getValue == "LOYAL")
@@ -22,13 +22,15 @@ drools:
             System.out.println("==========Adding 5% discount for LOYAL customer=============");
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 5);
     end
+    
     rule Customer type based discount - others
         when
             OrderRequest(customerType.getValue != "LOYAL")
         then
             System.out.println("==========Adding 3% discount for NEW or DISSATISFIED customer=============");
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 3);
-        end
+    end
+    
     rule Amount based discount
         when
             OrderRequest(amount > 1000L)
