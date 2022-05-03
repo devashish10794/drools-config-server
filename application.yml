@@ -9,7 +9,7 @@ drools:
     
     rule AgeBasedDiscount
         when
-            OrderRequest(age < 20 || age > 50)
+            OrderRequest(age < 30 || age > 50)
         then
             System.out.println("==========Adding 10% discount for Kids/ senior customer=============");
             orderDiscount.setDiscount(orderDiscount.getDiscount() + 10);  
